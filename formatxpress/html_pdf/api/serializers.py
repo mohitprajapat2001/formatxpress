@@ -1,6 +1,11 @@
 from utils.utils import get_model
 from utils.constants import AppModelNames, ValidContentType
-from rest_framework.serializers import ModelSerializer, ValidationError
+from rest_framework.serializers import (
+    ModelSerializer,
+    ValidationError,
+    HiddenField,
+    CurrentUserDefault,
+)
 from html_pdf.constants import ValidationErrors, PdfHtmlFixturePath
 from django.core.files.base import ContentFile
 from html_pdf.conversion import HtmlPdfConversions
@@ -10,6 +15,8 @@ HtmlPdf = get_model(**AppModelNames.HtmlPdf)
 
 
 class HtmlPdfSerializer(ModelSerializer):
+    user = HiddenField(default=CurrentUserDefault())
+
     class Meta:
         model = HtmlPdf
         fields = ("id", "html", "pdf", "user", "created", "modified")
