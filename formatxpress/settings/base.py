@@ -32,7 +32,10 @@ THIRD_PARTY_APPS = [
 ]
 
 
-PROJECT_APPS = ["accounts.apps.AccountsConfig"]
+PROJECT_APPS = [
+    "accounts.apps.AccountsConfig",
+    "html_pdf.apps.HtmlPdfConfig",
+]
 DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
