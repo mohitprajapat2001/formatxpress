@@ -1,5 +1,3 @@
-from django.utils.translation import gettext_lazy as _
-
 DD_MM_YYYY = "%d-%m-%Y"
 YYYY_MM_DD = "%Y-%m-%d"
 
@@ -53,3 +51,17 @@ class CacheTimeout:
     @classmethod
     def x_minutes(cls, x: int):
         return x * 60
+
+
+class AppModelNames:
+    """App Model Names Constants"""
+
+    # HTML-PDF
+    HtmlPdf = {"app_label": "html_pdf", "model_name": "HtmlPdf"}
+
+
+class ValidContentType:
+    """Valid Content Types"""
+
+    PDF = "application/pdf"
+    HTML = "text/html"

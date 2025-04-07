@@ -3,6 +3,10 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,django
 formatxpress/settings/dev.py
 formatxpress/cache/*
+formatxpress/fixtures/*
+formatxpress/media/*
+
+
 ### Django ###
 *.log
 *.pot
