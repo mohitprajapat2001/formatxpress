@@ -1,4 +1,3 @@
-from django.utils.translation import gettext_lazy as _
 from django.conf import settings
 from os.path import join
 
@@ -10,9 +9,3 @@ class UploadPaths:
 
     HTML_PATH = "htmlpdf/html/"
     PDF_PATH = "htmlpdf/pdf/"
-
-
-class ValidationErrors:
-    """HTML PDF Validation Errors"""
-
-    ContentTypeError = (_("Invalid Content Type"),)

@@ -1,10 +1,10 @@
 from utils.utils import get_model
-from utils.constants import AppModelNames, ValidContentType
+from utils.constants import AppModelNames, ValidContentType, ValidationErrors
 from rest_framework.serializers import (
     ModelSerializer,
     ValidationError,
 )
-from html_pdf.constants import ValidationErrors, PdfHtmlFixturePath
+from html_pdf.constants import PdfHtmlFixturePath
 from django.core.files.base import ContentFile
 from html_pdf.conversion import HtmlPdfConversions
 

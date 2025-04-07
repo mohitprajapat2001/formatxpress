@@ -1,3 +1,5 @@
+from django.utils.translation import gettext_lazy as _
+
 DD_MM_YYYY = "%d-%m-%Y"
 YYYY_MM_DD = "%Y-%m-%d"
 
@@ -59,9 +61,19 @@ class AppModelNames:
     # HTML-PDF
     HtmlPdf = {"app_label": "html_pdf", "model_name": "HtmlPdf"}
 
+    # Pdf - Image
+    Pdf2Image = {"app_label": "pdf_image", "model_name": "Pdf2Image"}
+    PdfImages = {"app_label": "pdf_image", "model_name": "PdfImages"}
+
 
 class ValidContentType:
     """Valid Content Types"""
 
     PDF = "application/pdf"
     HTML = "text/html"
+
+
+class ValidationErrors:
+    """HTML PDF Validation Errors"""
+
+    ContentTypeError = _("Invalid Content Type")
