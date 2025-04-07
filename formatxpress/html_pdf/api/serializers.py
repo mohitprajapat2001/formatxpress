@@ -3,8 +3,6 @@ from utils.constants import AppModelNames, ValidContentType
 from rest_framework.serializers import (
     ModelSerializer,
     ValidationError,
-    HiddenField,
-    CurrentUserDefault,
 )
 from html_pdf.constants import ValidationErrors, PdfHtmlFixturePath
 from django.core.files.base import ContentFile
@@ -15,11 +13,10 @@ HtmlPdf = get_model(**AppModelNames.HtmlPdf)
 
 
 class HtmlPdfSerializer(ModelSerializer):
-    user = HiddenField(default=CurrentUserDefault())
-
     class Meta:
         model = HtmlPdf
         fields = ("id", "html", "pdf", "user", "created", "modified")
+        read_only_fields = ("id", "user", "created", "modified")
 
     def validate(self, attrs):
         if not (attrs["pdf"] or attrs["html"]):
